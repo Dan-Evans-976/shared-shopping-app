@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\ShoppingList;
 
 class IndexController extends Controller
 {
@@ -13,12 +13,11 @@ class IndexController extends Controller
      */
     public function index(){
 
-        $user = Auth::user();
 
-        if ($user == null){
-            return redirect()->route('login');
-        }
+        $lists = ShoppingList::with('ListItems')->get();
 
-        return view('index');
+        // dd($lists);
+
+        return view('index', compact('lists'));
     }
 }

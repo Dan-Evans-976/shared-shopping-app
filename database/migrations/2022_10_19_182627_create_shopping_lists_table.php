@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lists', function (Blueprint $table) {
+        Schema::create('shopping_lists', function (Blueprint $table) {
             $table->id();
 
             $table->string('name');
             $table->string('description');
-            $table->integer('owner');
 
             $table->timestamps();
             $table->softdeletes();

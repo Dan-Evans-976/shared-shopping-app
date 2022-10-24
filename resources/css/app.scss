@@ -1,5 +1,14 @@
 @import 'variables';
 
+// @import "../node_modules/bootstrap/scss/variables";
+
+$theme-colors: (
+  "primary": $highlight,
+  "danger": $danger,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 body{
     margin: 0px;
     background-color: #e2e2e2;
@@ -62,5 +71,26 @@ body{
             }
         }
     }
+}
 
+.progress-bar{
+    width: 100%;
+    height: 24px;
+    border-radius: 5px;
+    position: relative;
+    background-color: #959595;
+
+    .progress-readout{
+        color: #ffffff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .progress-slider{
+        height: 100%;
+        border-radius: 5px;
+        background-color: $highlight;
+    }
 }

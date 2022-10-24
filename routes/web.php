@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ShoppingListsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,6 @@ use App\Http\Controllers\IndexController;
 //     return view('welcome');
 // });
 
-Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/', [ShoppingListsController::class, 'index'])->name('index');
+Route::get('/list/{listId}', [ShoppingListsController::class, 'show'])->name('list.show');
+Route::delete('/list/{listId}', [ShoppingListsController::class, 'delete'])->name('list.delete');
