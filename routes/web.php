@@ -21,4 +21,6 @@ use App\Http\Controllers\ShoppingListsController;
 
 Route::get('/', [ShoppingListsController::class, 'index'])->name('index');
 Route::get('/list/{listId}', [ShoppingListsController::class, 'show'])->name('list.show');
-Route::delete('/list/{listId}', [ShoppingListsController::class, 'delete'])->name('list.delete');
+Route::delete('/list/{listId}', [ShoppingListsController::class, 'deleteList'])->name('list.delete');
+Route::delete('/list/{listId}/list-item/{listItemId}', [ShoppingListsController::class, 'deleteListItem'])->name('list.list-item.delete');
+Route::post('/list/{listId}/list-item/{listItemId}/{check}', [ShoppingListsController::class, 'checkListItem'])->name('list.list-item.check');

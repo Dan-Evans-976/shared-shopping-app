@@ -9,6 +9,8 @@
         <!-- Fonts -->
         
         @vite(['resources/css/app.scss', 'resources/js/app.js'])
+
+        @stack('js')
         
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <style>
